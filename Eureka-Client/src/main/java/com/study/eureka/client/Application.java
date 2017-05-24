@@ -12,13 +12,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @EnableAutoConfiguration
 public class Application {
-	
-	@RequestMapping("/test")
-    public String home() {
-        return "Hello world";
-    }
+
 	
 	public static void main(String[] args) {
-		new SpringApplicationBuilder(Application.class).web(true).run(args);
+		new SpringApplicationBuilder(Application.class,HelloController.class).web(true).run(args);
 	}
 }
