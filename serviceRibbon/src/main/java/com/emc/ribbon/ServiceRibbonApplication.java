@@ -1,4 +1,4 @@
-package org.serviceRibbon;
+package com.emc.ribbon;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -11,15 +11,16 @@ import org.springframework.web.client.RestTemplate;
 @EnableDiscoveryClient
 public class ServiceRibbonApplication {
 	
+	@Bean
+	@LoadBalanced
+	RestTemplate restTemplate() {
+		return new RestTemplate();
+	}
+	
 	public static void main(String[] args) {
 	        SpringApplication.run(ServiceRibbonApplication.class, args);
 
 	}
 	
-	@Bean
-	@LoadBalanced
-	RestTemplate restTemplate() {
-        return new RestTemplate();
-    }
 
 }
