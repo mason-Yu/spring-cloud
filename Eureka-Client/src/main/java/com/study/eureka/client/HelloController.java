@@ -21,7 +21,7 @@ public class HelloController {
 	@RequestMapping(value="/sayHello", method = RequestMethod.GET)
 	public String sayhello(@RequestParam String name) {
 		ServiceInstance instance = client.getLocalServiceInstance();
-		System.out.println(instance.getHost()+"===================================");
+		System.out.println(instance.getHost()+"===================================1");
 		logger.info("/sayhello, host: " + instance.getHost() + ", service_id: " 
 						+ instance.getServiceId() + ", result: Hello "+ name+ "!");
 		return "Hello " + name + "!";

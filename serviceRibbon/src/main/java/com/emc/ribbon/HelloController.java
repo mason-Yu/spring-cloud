@@ -15,7 +15,7 @@ public class HelloController {
 		RestTemplate restTemplate;
 		
 		@RequestMapping(value="/sayHello" , method = RequestMethod.GET)
-		public String sayHello(@RequestParam String name){
+		public String sayHello(){
 			System.out.println("-------------------------hello console----------------------");
 			return restTemplate.getForEntity("http://HELLO-SERVICE/sayHello?name=plocen", String.class).getBody();
 			
