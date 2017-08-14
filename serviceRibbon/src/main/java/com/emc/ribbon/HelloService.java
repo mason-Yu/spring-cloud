@@ -20,9 +20,9 @@ public class HelloService {
 	 * @return String
 	 */
 	@HystrixCommand(fallbackMethod = "sayHelloFallBack")
-	public String sayHello() {
+	public String sayHello(String userName, String password) {
 		
-		return restTemplate.getForEntity("http://HELLO-SERVICE/sayHello?name=plocen", String.class).getBody();
+		return restTemplate.getForEntity("http://HELLO-SERVICE/sayHello?userName="+userName+"&password="+password, String.class).getBody();
 	}
 	
 	public String sayHelloFallBack(){
