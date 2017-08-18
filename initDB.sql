@@ -10,3 +10,9 @@ insert into city(city_name, province_id, description)value('深圳', 9, '');
 insert into city(city_name, province_id, description)value('武汉', 10, '');
 insert into city(city_name, province_id, description)value('郑州', 11, '');
 select * from city;
+
+insert into user(user_name, description)value('sam', '');
+insert into user(user_name, description)value('pop', '');
+insert into user(user_name, description)value('administrator', 'administrator');
+insert into user(user_name, description)value('system', 'administrator');
+select * from user;
