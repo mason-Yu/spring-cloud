@@ -8,8 +8,7 @@ import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
 
 @Service
-public class HelloService {
-
+public class LoginService {
 	@Autowired
 	RestTemplate restTemplate;
 	
@@ -19,15 +18,14 @@ public class HelloService {
 	 * 	就调用sayHelloFallBack直接返回客户端， 防止请求阻塞过多，导致服务崩溃
 	 * @return String
 	 */
-	@HystrixCommand(fallbackMethod = "sayHelloFallBack")
-	public String sayHello(String userName, String password) {
+	@HystrixCommand(fallbackMethod = "loginFallBack")
+	public String login(String userName, String password) {
 		
-		return restTemplate.getForEntity("http://USER-SERVICE/sayHello?userName="+userName+"&password="+password, String.class).getBody();
+		return restTemplate.getForEntity("http://USER-SERVICE/api/userLogin/" + userName + "/"+password, String.class).getBody();
 	}
 	
-	public String sayHelloFallBack(){
+	public String loginFallBack(){
 		return "error page! please check your service"; 
 			
 	}
-	
 }

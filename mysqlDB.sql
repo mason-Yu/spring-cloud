@@ -20,6 +20,7 @@ drop table if exists user;
 create table user (
 id int(10) unsigned not null auto_increment comment 'user number',
 user_name varchar(25) default null comment 'user name',
+password varchar(25) default null comment 'user password',
 description varchar(50) default null comment 'desrciption',
 primary key(id)
 )engine = innoDB auto_increment=1 default charset=utf8;

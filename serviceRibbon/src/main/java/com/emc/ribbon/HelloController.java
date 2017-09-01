@@ -17,5 +17,11 @@ public class HelloController {
 		public String sayHello(@RequestParam String userName, @RequestParam String password){
 			System.out.println("---------------------------------" + userName + "-----------------------------------");
 			return hello.sayHello(userName, password);
-			}
 		}
+		
+		@RequestMapping(value="/hello" , method = RequestMethod.GET)
+		public String hello(){
+			System.out.println("---------------------------------hahahah-----------------------------------");
+			return "hahaha";
+		}
+	}
