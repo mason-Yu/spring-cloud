@@ -31,7 +31,7 @@ public class AccessFilter extends ZuulFilter {
 
         log.info(String.format("%s request to %s", request.getMethod(), request.getRequestURL().toString()));
 
-        Object accessToken = "123";
+        Object accessToken = request.getParameter("accessToken");;
         if(accessToken == null) {
             log.warn("access token is empty");
             ctx.setSendZuulResponse(false);

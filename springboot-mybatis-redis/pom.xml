@@ -67,6 +67,12 @@
             <version>${mysql-connector}</version>
         </dependency>
 
+		<dependency>
+            <groupId>utilitis</groupId>
+            <artifactId>utilitis</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        
         <!-- Junit -->
         <dependency>
             <groupId>junit</groupId>

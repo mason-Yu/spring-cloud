@@ -1,4 +1,5 @@
 /*CREATE DATABASE springbootdb;*/
+use springbootdb;
 drop table if exists province;
 create table province (
 id int(10) unsigned not null auto_increment comment 'province number',

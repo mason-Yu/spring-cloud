@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="Eureka-Client" />
+        <module name="EurekaServer" />
+        <module name="serviceRibbon" />
+        <module name="springboot-mybatis-redis" />
+        <module name="springboot-mybatis-redis-annotation" />
+        <module name="springboot-zuul" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Eureka-Client" target="1.6" />
+      <module name="EurekaServer" target="1.6" />
+      <module name="serviceRibbon" target="1.8" />
+      <module name="springboot-mybatis-redis" target="1.6" />
+      <module name="springboot-mybatis-redis-annotation" target="1.6" />
+      <module name="springboot-zuul" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

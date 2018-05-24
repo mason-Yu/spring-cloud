@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/Eureka-Client" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/EurekaServer" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/serviceRibbon" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot-mybatis-redis" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot-mybatis-redis-annotation" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot-zuul" charset="UTF-8" />
+  </component>
+</project>
