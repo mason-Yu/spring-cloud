@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+ 						
+<mapper namespace="org.spring.springboot.dao.UserDao">
+
+	<resultMap id="BaseResultMap" type="org.spring.springboot.domain.User">
+		<result column="id" property="id" />
+		<result column="user_name" property="userName" />
+		<result column="description" property="description" />
+	</resultMap>
+
+	<parameterMap id="User" type="org.spring.springboot.domain.User"/>
+
+	<sql id="Base_Column_List">
+		id, user_name, description
+	</sql>
+
+	<select id="findUserByName" resultMap="BaseResultMap" parameterType="java.lang.String">
+		select
+		<include refid="Base_Column_List" />
+		from user
+		where user_name = #{userName}
+	</select>
+
+	<select id="getUser" resultMap="BaseResultMap" >
+		select
+		<include refid="Base_Column_List" />
+		from user
+	</select>
+
+	<insert id="saveUser" parameterMap="User" useGeneratedKeys="true" keyProperty="id">
+		insert into user(User_name,description) values (#{UserName},#{description})
+	</insert>
+
+	<update id="updateUser" parameterMap="User">
+		update user set
+		<if test="provinceId!=null">
+			province_id = #{provinceId},
+		</if>
+		<if test="UserName!=null">
+			User_name = #{UserName},
+		</if>
+		<if test="description!=null">
+			description = #{description}
+		</if>
+		where id = #{id}
+	</update>
+
+	<delete id="deleteUser" parameterType="java.lang.Long">
+		delete from user where id = #{id}
+	</delete>
+	
+	<select id="checkExists" resultType="java.lang.Integer">
+		select count(id) from user where user_name = #{userName} and password = #{password}
+	</select>
+
+</mapper>
