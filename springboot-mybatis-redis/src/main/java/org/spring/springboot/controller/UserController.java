@@ -23,7 +23,9 @@ public class UserController {
   @Autowired private UserService userService;
 
   @RequestMapping(value = "login", method = RequestMethod.GET)
-  public RespBody login(@RequestParam String userName, @RequestParam String password) {
+  public RespBody login(@RequestParam String userName, @RequestParam String password)
+      throws InterruptedException {
+    Thread.sleep(5);
     ServiceInstance instance = client.getLocalServiceInstance();
     logger.info(
         String.format(

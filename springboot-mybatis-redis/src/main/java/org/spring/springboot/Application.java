@@ -4,12 +4,14 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import com.spring4all.swagger.EnableSwagger2Doc;
 
 /**
  * Spring Boot 应用启动类
  *
  * <p>Created by Mason on 2018/05/24.
  */
+@EnableSwagger2Doc
 // Spring Boot 应用的标识
 @SpringBootApplication
 // mapper 接口类扫描包配置
